@@ -45,7 +45,7 @@ class sgDataApiBase(metaclass=ABCMeta):
             param = param + key + '=' + str(value)
         
         _serviceURL = urlparse(self.APIConfig["URI"] + self.servicename + param)        
-        #print(_serviceURL)
+        print(_serviceURL)
         return _serviceURL
 
     def getServiceResponse(self, **kwargs):
@@ -53,7 +53,7 @@ class sgDataApiBase(metaclass=ABCMeta):
         body = ''
         headers = self.getServiceHeaders()
         target = self.getServiceURL(**kwargs)
-
+        
         #Get handle to http
         h = http.Http()
 
@@ -73,7 +73,6 @@ class sgDataApiBase(metaclass=ABCMeta):
             print("getServiceResponse Failed: " + str(response.status))
             return None
         
-    @classmethod
     def dump(self, **kwargs):
         jsonObj = self.getServiceResponse(**kwargs)        
         _result = json.dumps(jsonObj, sort_keys=True, indent=4)        
