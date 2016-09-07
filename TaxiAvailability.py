@@ -5,7 +5,7 @@ import sgDataModel
 class TaxiAvailability(sgDataApiBase):
     def __init__(self):
         sgDataApiBase.__init__(self, "LTA")
-        sgDataApiBase.servicename = 'Taxi-Availability'
+        self.servicename = 'Taxi-Availability'
 
     def result(self, Latitude, Longitude, Radius):
         data = sgDataModel.sgDataBL()

@@ -8,7 +8,7 @@ import math
 class BusArrival(sgDataApiBase):
     def __init__(self):
         sgDataApiBase.__init__(self,"LTA")
-        sgDataApiBase.servicename = 'BusArrival'
+        self.servicename = 'BusArrival'
 
     def result(self, BusStopID):
         jsonObj = self.getServiceResponse(BusStopID=BusStopID,SST='True')

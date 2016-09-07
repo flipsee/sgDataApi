@@ -4,7 +4,7 @@ import sgDataModel
 class BusRoutes(sgDataApiBase):
     def __init__(self):
         sgDataApiBase.__init__(self,"LTA")
-        sgDataApiBase.servicename = 'BusRoutes'
+        self.servicename = 'BusRoutes'
 
     def result(self, ServiceNo):
         data = sgDataModel.sgDataBL()
